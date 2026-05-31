@@ -49,3 +49,6 @@ class Game:
         """Отрисовать текущий кадр."""
         self.screen.fill(BACKGROUND_COLOR)
         pygame.display.flip()
+
+        current_fps = int(self.clock.get_fps())
+        pygame.display.set_caption(f"{WINDOW_TITLE} | FPS: {current_fps}")
