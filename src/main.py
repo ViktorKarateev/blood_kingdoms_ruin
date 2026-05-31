@@ -2,11 +2,13 @@
 
 import pygame
 
-
-WINDOW_WIDTH = 1280
-WINDOW_HEIGHT = 720
-FPS = 60
-WINDOW_TITLE = "Blood Kingdoms: Ruin"
+from core.settings import (
+    BACKGROUND_COLOR,
+    FPS,
+    WINDOW_HEIGHT,
+    WINDOW_TITLE,
+    WINDOW_WIDTH,
+)
 
 
 def main() -> None:
@@ -24,7 +26,7 @@ def main() -> None:
             if event.type == pygame.QUIT:
                 running = False
 
-        screen.fill((20, 20, 24))
+        screen.fill(BACKGROUND_COLOR)
 
         pygame.display.flip()
         clock.tick(FPS)
