@@ -7,3 +7,6 @@ FPS = 60
 WINDOW_TITLE = "Blood Kingdoms: Ruin"
 
 BACKGROUND_COLOR = (20, 20, 24)
+
+
+HEX_SIZE = 40
