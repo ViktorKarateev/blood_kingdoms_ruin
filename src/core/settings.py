@@ -8,5 +8,6 @@ WINDOW_TITLE = "Blood Kingdoms: Ruin"
 
 BACKGROUND_COLOR = (20, 20, 24)
 
-
 HEX_SIZE = 40
+
+DEBUG_SHOW_HEX_COORDINATES = True

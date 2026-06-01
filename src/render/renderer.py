@@ -4,7 +4,12 @@ from math import cos, pi, sin
 
 import pygame
 
-from core.settings import HEX_SIZE, WINDOW_HEIGHT, WINDOW_WIDTH
+from core.settings import (
+    DEBUG_SHOW_HEX_COORDINATES,
+    HEX_SIZE,
+    WINDOW_HEIGHT,
+    WINDOW_WIDTH,
+)
 from map.grid import Grid
 from map.hex import Hex
 from utils.hex_math import hex_to_pixel
@@ -40,7 +45,8 @@ class Renderer:
         pygame.draw.polygon(self.screen, HEX_FILL_COLOR, points)
         pygame.draw.polygon(self.screen, HEX_OUTLINE_COLOR, points, width=2)
 
-        self._draw_hex_coordinates(hex_cell, center_x, center_y)
+        if DEBUG_SHOW_HEX_COORDINATES:
+            self._draw_hex_coordinates(hex_cell, center_x, center_y)
 
     def _get_hex_corners(
         self,
