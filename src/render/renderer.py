@@ -18,7 +18,7 @@ from utils.hex_math import hex_to_pixel
 HEX_OUTLINE_COLOR = (90, 90, 96)
 HEX_FILL_COLOR = (34, 34, 40)
 HEX_COORDINATES_COLOR = (150, 150, 160)
-
+HEX_SELECTED_COLOR = (90, 42, 42)
 
 class Renderer:
     """Отвечает за отрисовку карты и игровых объектов."""
