@@ -1,5 +1,7 @@
 """Отрисовщик игровых объектов."""
 
+from math import cos, pi, sin
+
 import pygame
 
 from core.settings import HEX_SIZE, WINDOW_HEIGHT, WINDOW_WIDTH
@@ -45,17 +47,10 @@ class Renderer:
         points = []
 
         for index in range(6):
-            angle_degrees = 60 * index - 30
-            angle_radians = angle_degrees * 3.141592653589793 / 180
+            angle_radians = pi / 180 * (60 * index - 30)
 
-            x = center_x + HEX_SIZE * pygame.math.Vector2(
-                1,
-                0,
-            ).rotate_rad(angle_radians).x
-            y = center_y + HEX_SIZE * pygame.math.Vector2(
-                1,
-                0,
-            ).rotate_rad(angle_radians).y
+            x = center_x + HEX_SIZE * cos(angle_radians)
+            y = center_y + HEX_SIZE * sin(angle_radians)
 
             points.append((x, y))
 
