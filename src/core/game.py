@@ -9,6 +9,8 @@ from core.settings import (
     WINDOW_TITLE,
     WINDOW_WIDTH,
 )
+from map.grid import Grid
+from render.renderer import Renderer
 
 
 class Game:
@@ -20,6 +22,9 @@ class Game:
 
         self.screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
         pygame.display.set_caption(WINDOW_TITLE)
+
+        self.grid = Grid(radius=3)
+        self.renderer = Renderer(self.screen)
 
         self.clock = pygame.time.Clock()
         self.running = True
@@ -48,6 +53,8 @@ class Game:
     def _draw(self) -> None:
         """Отрисовать текущий кадр."""
         self.screen.fill(BACKGROUND_COLOR)
+        self.renderer.draw_grid(self.grid)
+
         pygame.display.flip()
 
         current_fps = int(self.clock.get_fps())
